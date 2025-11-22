@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "tsx src/server.ts --watch",
-    "lint": "eslint src/* --fix"
+    "lint": "eslint src/*",
+    "lint:fix": "eslint src/* --fix",
+    "prepare": "husky"
   },
   "keywords": [],
   "author": "",

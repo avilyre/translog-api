@@ -1,4 +1,6 @@
+import 'dotenv/config';
 import type { Knex } from 'knex';
+import { env } from './env/index.ts';
 
 const consoleColor = {
   reset: '\x1b[0m',
@@ -7,10 +9,12 @@ const consoleColor = {
 
 export const PORT = 3333;
 
+const { DATABASE_URL } = env;
+
 export const databaseConfig: Knex.Config = {
   client: 'sqlite3',
   connection: {
-    filename: './storage/database.sqlite'
+    filename: DATABASE_URL
   },
   migrations: {
     extension: 'ts',
